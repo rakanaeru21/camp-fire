@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <a href="#home" class="logo"><img src="Frame 17.jpg" alt=""></a>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#tips">Tips</a>
+            <a href="#lokasi">Lokasi</a>
+            <a href="contact.html" class="log">Sign In</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-konten animate">
+            <img src="Frame 19.png" alt="">
+            <p class="fade-in">Sign up today and be the first to know about our latest updates and special promotions!</p>
+            <a href="daftar.html" class="signup-btn">Sign Up</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-container animate">
+            <div class="about-img">
+                <img src="image 11 (1).png" alt="">
+            </div>
+
+            <div class="about-text">
+                <h2 class="section-title">ABOUT</h2>
+                <p>Selamat datang di Camp fire, destinasi utama Anda untuk semua hal tentang perkemahan! Kami adalah sekelompok pecinta alam dan petualangan yang berdedikasi untuk menginspirasi dan memfasilitasi pengalaman berkemah terbaik untuk semua orang, baik pemula maupun yang sudah berpengalaman.</p>
+                <p>Mengapa memilih kammi?</p>
+                <p>Di Camp fire, kami berkomitmen untuk mendukung Anda dalam setiap langkah perjalanan perkemahan Anda. Dengan pengetahuan yang mendalam tentang dunia perkemahan dan kecintaan kami pada alam, kami yakin bahwa kami dapat memberikan panduan dan sumber daya yang Anda butuhkan untuk merencanakan petualangan yang sukses.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="tips" id="tips">
+        <div class="tips-container animate">
+            <div class="tips-img">
+                <img src="image 11 (2).png" alt="">
+            </div>
+            <div class="tips-text">
+                <h2 class="section-title">TIPS</h2>
+                <p>Pilih lokasi kemah dengan bijak, pastikan aman dan sesuai dengan kebutuhan Anda. Bawa peralatan yang tepat, seperti tenda, sleeping bag, dan pakaian berlapis untuk berbagai cuaca. Persiapkan peralatan masak dan makanan yang mudah disiapkan, serta cukup air atau alat pemurni air. Bawa alat navigasi seperti peta, kompas, atau GPS, dan peralatan komunikasi yang memadai. Selalu bawa kotak pertolongan pertama dan peralatan darurat, termasuk senter dan pisau multifungsi. Jaga kebersihan dengan membawa perlengkapan hygiene dan sanitasi yang sesuai. Hargai lingkungan dengan mematuhi aturan "Leave No Trace" dan berhati-hati dengan kebakaran. Periksa ramalan cuaca, bawa perlindungan dari matahari, dan rencanakan aktivitas dengan baik. Terakhir, nikmati alam, dokumentasikan pengalaman Anda, dan pelajari hal-hal baru selama petualangan.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="lokasi" id="lokasi">
+        <div class="lokasi-header">
+            <h2 class="section-title">Lokasi</h2>
+            <button id="show-more">Lihat Selengkapnya</button>
+        </div>
+        <div class="location-container animate" id="location-container">
+            <!-- Locations will be added dynamically -->
+        </div>
+    </section>
+
+    <script>
+        const locations = [
+    {
+        image: "Frame 2.png",
+        title: "Gunung Semeru",
+        address: "Jalan Ranu Pani, Senduro, Lumajang, Jawa Timur, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Semeru/@-8.107717,112.9224075,15z/data=!3m1!4b1!4m6!3m5!1s0x2dd63e89e1d817bb:0x9c14d4ed3c488f54!8m2!3d-8.1077172!4d112.9224075!16zL20vMDc5ejYw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "rinjani.jpg",
+        title: "Gunung Rinjani",
+        address: "Jalan Sembalun, Lombok Timur, Nusa Tenggara Barat, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Rinjani/@-8.4112737,116.4470276,15z/data=!3m1!4b1!4m6!3m5!1s0x2dcc2d800216cccf:0x3c03cdbf11d30a1e!8m2!3d-8.4112952!4d116.4573488!16zL20vMDR4bHBi?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "merapi.jpg",
+        title: "Gunung Merapi",
+        address: "Jalan Kaliurang, Sleman, Yogyakarta, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Merapi/@-7.5407866,110.4058913,14z/data=!3m1!4b1!4m6!3m5!1s0x2e7a641eadf67e03:0x54402bc7c86c7173!8m2!3d-7.540831!4d110.444817!16s%2Fg%2F11bx8xpwzw?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "bromo.jpg",
+        title: "Gunung Bromo",
+        address: "Jalan Cemoro Lawang, Probolinggo, Jawa Timur, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Bromo/@-7.9424721,112.942691,15z/data=!3m1!4b1!4m6!3m5!1s0x2dd637aaab794a41:0xada40d36ecd2a5dd!8m2!3d-7.9424936!4d112.9530122!16zL20vMDI3Z3Jf?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "Gunung-Kerinci-3.png",
+        title: "Gunung Kerinci",
+        address: "Jalan Kayu Aro, Kabupaten Kerinci, Jambi, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Kec.+Gn.+Kerinci,+Kabupaten+Kerinci,+Jambi/@-1.907957,100.9603434,11z/data=!3m1!4b1!4m6!3m5!1s0x2e2d068ba5d17aa3:0x8b02d2c5748df558!8m2!3d-1.9082345!4d101.2997226!16s%2Fg%2F1223wt8c?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "lawu.jpg",
+        title: "Gunung Lawu",
+        address: "Jalan Cemoro Sewu, Magetan, Jawa Timur, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Lawu/@-7.6274556,111.1552409,14z/data=!3m1!4b1!4m6!3m5!1s0x2e798c8138540ea3:0x78393c7070cc3f2b!8m2!3d-7.6275!4d111.1941666!16s%2Fm%2F027b999?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "slamet.jpg",
+        title: "Gunung Slamet",
+        address: "Jalan Bambangan, Purbalingga, Jawa Tengah, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Slamet/@-7.2413674,109.2041232,15z/data=!3m1!4b1!4m6!3m5!1s0x2e6ff3184df71285:0x79839e3468a02f5b!8m2!3d-7.2413889!4d109.2144444!16s%2Fm%2F0277ynk?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "agung.jpg",
+        title: "Gunung Agung",
+        address: "Jalan Pura Besakih, Karangasem, Bali, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Agung,+Kecamatan+Bumijawa,+Kabupaten+Tegal,+Jawa+Tengah/@-7.1661016,109.0710058,15z/data=!3m1!4b1!4m6!3m5!1s0x2e6f91854c2cf047:0x7d24c159e90a1458!8m2!3d-7.1645088!4d109.0780145!16s%2Fg%2F120_g0nj?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    },
+    {
+        image: "papan.jpg",
+        title: "Gunung Papandayan",
+        address: "Jalan Cisurupan, Kabupaten Garut, Jawa Barat, Indonesia",
+        googleMapsUrl: "https://www.google.com/maps/place/Gn.+Papandayan/@-7.3193037,107.7207282,15z/data=!3m1!4b1!4m6!3m5!1s0x2e68a3d92fef0d13:0x32fef13d99e37776!8m2!3d-7.3193253!4d107.7310494!16s%2Fm%2F02779ps?entry=ttu&g_ep=EgoyMDI1MDIwMy4wIKXMDSoASAFQAw%3D%3D"
+    }
+];
+
+
+
+function createLocationBox(location) {
+    const box = document.createElement('div');
+    box.classList.add('location-box');
+
+    box.innerHTML = `
+        <img src="${location.image}" alt="${location.title}">
+        <h3>${location.title}</h3>
+        <p>${location.address}</p>
+        <a href="${location.googleMapsUrl}" target="_blank" class="google-maps-button">
+            Lihat di Google Maps
+        </a>
+    `;
+
+    return box;
+}
+
+
+function displayLocations(startIndex, endIndex) {
+    const container = document.getElementById('location-container');
+    for (let i = startIndex; i < endIndex && i < locations.length; i++) {
+        const locationBox = createLocationBox(locations[i]);
+        container.appendChild(locationBox);
+    }
+}
+
+
+let currentIndex = 0;
+const itemsPerPage = 6;
+displayLocations(currentIndex, currentIndex + itemsPerPage);
+
+
+document.getElementById('show-more').addEventListener('click', function () {
+    currentIndex += itemsPerPage;
+    displayLocations(currentIndex, currentIndex + itemsPerPage);
+
+    
+    if (currentIndex >= locations.length) {
+        this.style.display = 'none';
+    }
+}); 
+
+const animateElements = document.querySelectorAll('.animate');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, { threshold: 0.1 });
+
+animateElements.forEach(element => {
+    observer.observe(element);
+});
+    </script>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>CAMP FIRE</h3>
+                <p>Explore the wilderness with confidence.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#tips">Tips</a>
+                <a href="#lokasi">Lokasi</a>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: campfire@gmail.com</p>
+                <p>Phone: +62 8788 0436 927</p>
+                <p>Address: Jalan Raya Camping No. 123, Indonesia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Camp Fire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
+</body>
+</html>
